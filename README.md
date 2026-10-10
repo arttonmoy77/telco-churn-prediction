@@ -10,8 +10,8 @@ Keeping an existing customer is usually cheaper than acquiring a new one. A chur
 
 IBM's **Telco Customer Churn** dataset (7,043 customers, 21 columns): demographics, account details, subscribed services, and whether the customer churned.
 
-- Download from [Kaggle](https://www.kaggle.com/datasets/blastchar/telco-customer-churn)
-- Place `WA_Fn-UseC_-Telco-Customer-Churn.csv` in the `data/` folder
+- Source: [Kaggle](https://www.kaggle.com/datasets/blastchar/telco-customer-churn)
+- The CSV is included in `data/` so the project runs right after cloning
 
 ## Approach
 
@@ -45,25 +45,23 @@ Evaluated on a held-out 20% test set (stratified, `random_state=42`) at the defa
 ![SHAP feature importance](images/shap_bar.png)
 ![SHAP beeswarm](images/shap_beeswarm.png)
 
-Dashboard screenshot: save one as `images/dashboard.png` and add `![Dashboard](images/dashboard.png)` here.
-
 ## Project structure
 
 ```
-telco-churn/
+telco-churn-prediction/
 ├── app.py              # Streamlit dashboard
 ├── customerchurn.py    # EDA, model training, SHAP plots
 ├── churn_model.py      # Shared data loading and modelling code
 ├── requirements.txt
-├── data/               # put the CSV here
+├── data/               # the dataset CSV
 └── images/             # saved plots
 ```
 
 ## Run it
 
 ```bash
-git clone <your-repo-url>
-cd telco-churn
+git clone https://github.com/arttonmoy77/telco-churn-prediction.git
+cd telco-churn-prediction
 python -m venv .venv
 .venv\Scripts\activate        # Windows  (macOS/Linux: source .venv/bin/activate)
 pip install -r requirements.txt
